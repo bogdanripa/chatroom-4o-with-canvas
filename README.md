@@ -20,10 +20,13 @@ The code was generated using OpenAI's ChatGPT "4o with canvas" model, with sligh
 
 Check the client/ folder for the client-side, and the server/ for the server-side. The app needs redis for multiple socket.io instances to communicate with each other.
 
+## Demo
+https://chatroom-4o-with-canvas.app.genez.io/
+
 ## Set-up
 Once deployed (see the next section on how to do this), go to your project / Integrations / UPSTASH-REDIS and enable Redis. This will create some environment variables that are required for the app to run properly.
 
-# Deploy
+## Deploy
 :rocket: You can deploy your own version of this app with one click:
 
 [![Deploy to Genezio](https://raw.githubusercontent.com/Genez-io/graphics/main/svg/deploy-button.svg)](https://app.genez.io/start/deploy?repository=https://github.com/bogdanripa/chatroom-4o-with-canvas)
