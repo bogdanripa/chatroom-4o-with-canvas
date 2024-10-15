@@ -1,0 +1,35 @@
+services:
+    databases:
+        - name: chatroom
+          region: eu-central-1
+          type: mongo-atlas
+backend:
+    functions:
+        - entry: app.mjs
+          handler: handler
+          name: express
+          path: ./
+          type: httpServer
+    language:
+        name: js
+        packageManager: npm
+    path: server
+    scripts:
+        deploy: npm install
+        local: npm install
+frontend:
+    environment:
+        VITE_API_URL: ${{ backend.functions.express.url }}
+    path: client
+    publish: dist
+    scripts:
+        build: npm run build
+        deploy:
+            - npm install
+        start:
+            - npm install --silent
+            - npm run dev --silent
+    subdomain: chatroom-4o-with-canvas
+name: chatroom-4o-with-canvas
+region: eu-central-1
+yamlVersion: 2
