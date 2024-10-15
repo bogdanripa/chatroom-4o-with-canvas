@@ -13,57 +13,18 @@
 
 </div>
 
-# Express React Getting Started 
+# Chatroom implementation 
+This is a Genezio project that was generated using OpenAI's ChatGPT 4o with canvas.
 
-This is a Genezio project template for an Express.js fullstack application. It is a simple Express.js application that is set up to be deployed as a Genezio function.
+Check the client/ folder for the client-side, and the srever/ for the server-side. The app needs redis for multiple socket.io instances to communicate with each other.
 
-In the `server/app.mjs` file, you will see a very basic Express.js application that is set up to be deployed as a Genezio function.
-It handles a couple of requests on the following endpoints:
-
-- `/` -> return a simple "Hello World" message
-- `/hello?name=` -> return the name and the server location
-
-You can update the Express application in the `client/src/App.tsx` file, you can simply fetch data from the Express web app by sending a request to the function URL.
-
-Note: You can get the Express app's URLs by clicking on `"View your URLs"` button in the code editor in the dashboard or in the `Overview` page.
+## Set-up
+Once deployed (see the next section on how to do this), go to your project / Integrations / UPSTASH-REDIS and enable Redis. This will create some environment variables that are required for the app to run properly.
 
 # Deploy
-:rocket: You can deploy your own version of the template to Genezio with one click:
+:rocket: You can deploy your own version of this app with one click:
 
 [![Deploy to Genezio](https://raw.githubusercontent.com/Genez-io/graphics/main/svg/deploy-button.svg)](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/express-react-getting-started)
-
-
-## Genezio CLI Commands
-
-Genezio also provides a CLI tool that you can use to deploy your project from your machine.
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install -g genezio`  | Installs genezio globally                        |
-| `genezio login`           | Logs in to genezio                               |
-| `genezio local`           | Starts a local server                            |
-| `genezio deploy`          | Deploys a production project                     |
-| `genezio --help`          | Get help using genezio                           |
-
-## Learn more
-
-To learn more about Genezio, take a look at the following resources:
-
-- [Official genezio documentation](https://genezio.com/docs)
-- [Tutorials](https://genezio.com/blog)
-
-## Contact
-
-If you need support or you have any questions, please join us in our [Discord channel](https://discord.gg/uc9H5YKjXv). We'd love to chat!
-
-## Built With
-
-- [Genezio](https://genezio.com/)
-- [Node.JS](https://nodejs.org/en/)
-- [React](https://reactjs.org/)
-- [Vite](https://vitejs.dev/)
-- [Express](https://expressjs.com/)
 
 ***
 
