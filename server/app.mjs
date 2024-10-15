@@ -5,6 +5,7 @@ import { Server } from 'socket.io';
 import { createAdapter } from '@socket.io/redis-adapter';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import serverless from "serverless-http";
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.use(express.json());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'https://chatroom-4o-with-canvas.dev.app.genez.io', //add your frontend url here
+    origin: 'https://chatroom-4o-with-canvas.app.genez.io', //add your frontend url here
     methods: ['GET', 'POST'],
     credentials: true, // we need this to make sure the client connects to the same function when possible
   },
@@ -58,11 +59,6 @@ const MessageSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', UserSchema);
 const Message = mongoose.model('Message', MessageSchema);
-
-app.get('/users', async (req, res) => {
-  const users = await User.find();
-  res.json(users);
-});
 
 // Helper function to auto-disconnect inactive users
 const checkInactiveUsers = async () => {
@@ -158,3 +154,5 @@ const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+export const handler = serverless(server);

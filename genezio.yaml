@@ -9,7 +9,7 @@ backend:
           handler: handler
           name: express
           path: ./
-          type: httpServer
+          type: aws
     language:
         name: js
         packageManager: npm
