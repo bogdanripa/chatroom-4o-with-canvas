@@ -53,13 +53,6 @@ const App: React.FC = () => {
     loaded.current = true;
     console.log('useEffect');
 
-    fetch(import.meta.env.VITE_API_URL + '/users')
-    .then((res) => res.json())
-    .then((usersList) => {
-      console.log('got usersList');
-      console.log(usersList);
-    });
-
     socket.on('connect', () => {
       console.log('socket connected');
     });
