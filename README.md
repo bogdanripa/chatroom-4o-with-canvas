@@ -14,9 +14,11 @@
 </div>
 
 # Chatroom implementation 
-This is a Genezio project that was generated using OpenAI's ChatGPT 4o with canvas.
+This is a Genezio project that implements a basic chat room, where visitors choose a nickname and chat with each other. The goal of this project is to show how socket.io can be used with Genezio's serverless infrastructure.
 
-Check the client/ folder for the client-side, and the srever/ for the server-side. The app needs redis for multiple socket.io instances to communicate with each other.
+The code was generated using OpenAI's ChatGPT "4o with canvas" model, with slight manual adjustments.
+
+Check the client/ folder for the client-side, and the server/ for the server-side. The app needs redis for multiple socket.io instances to communicate with each other.
 
 ## Set-up
 Once deployed (see the next section on how to do this), go to your project / Integrations / UPSTASH-REDIS and enable Redis. This will create some environment variables that are required for the app to run properly.
