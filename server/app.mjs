@@ -15,7 +15,7 @@ app.use(express.json());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'https://chatroom-4o-with-canvas.app.genez.io', //add your frontend url here
+    origin: process.env.FRONTEND_URL,
     methods: ['GET', 'POST'],
     credentials: true, // we need this to make sure the client connects to the same function when possible
   },

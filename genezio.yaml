@@ -17,7 +17,10 @@ backend:
     scripts:
         deploy: npm install
         local: npm install
+    environment:
+        FRONTEND_URL: ${{frontend.client.subdomain}}
 frontend:
+    name: client
     environment:
         VITE_API_URL: ${{ backend.functions.express.url }}
     path: client
@@ -29,7 +32,6 @@ frontend:
         start:
             - npm install --silent
             - npm run dev --silent
-    subdomain: chatroom-4o-with-canvas
 name: chatroom-4o-with-canvas
 region: eu-central-1
 yamlVersion: 2
